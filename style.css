@@ -95,3 +95,20 @@ input {
     border-color: #ff6768;
     transition: all 0.4s ease 0s;
 }
+
+#extra-city-button {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    font-weight: bold;
+    background: white;
+    font-size: 20px;
+    outline: none;
+    margin-left: 10px;
+    margin-top: 14px;
+}
+
+#extra-city-button:active {
+    transform: translateY(2px);
+}
