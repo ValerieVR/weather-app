@@ -49,3 +49,49 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+#search-form-1, #search-form-2 {
+    display: flex;
+    align-items: center;
+}
+
+#search-input-1, #search-input-2 {
+    width: 250px;
+    overflow: hidden; 
+    font-size: 20px;
+    margin: 8px 0;
+    padding: 8px 0;
+    border-bottom: 3px solid #ff6768;
+    color: white;
+    outline: none; 
+    background: none;
+}
+
+input {
+    border: none;
+}
+
+::placeholder {
+    color: white;
+    opacity: 0.3; 
+}
+
+#search-button-1, #search-button-2 {
+    color: #134b70;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: white;
+    border-radius: 5px;
+    margin-left: 5px;
+    padding: 11px;
+    border: 2px solid #134b70;
+    display: inline-block;
+    transition: all 0.4 ease 0s;
+}
+
+#search-button-1:hover, #search-button-2:hover {
+    color: #ffffff;
+    background: #ff6768;
+    border-color: #ff6768;
+    transition: all 0.4s ease 0s;
+}
