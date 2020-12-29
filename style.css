@@ -215,9 +215,10 @@ input {
 }
 
 .hide-card-js {
-    display: none;
+    display: none !important;
 }
 
 .display-card-js {
     display: block;
 }
+
