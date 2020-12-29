@@ -23,6 +23,11 @@ body {
     flex-direction: column;
 }
 
+#outer-container-2 {
+    margin-top: 80px;
+    margin-right: 45px;
+}
+
 #inner-container-1, #inner-container-2 {
     display: flex;
     justify-content: center;
@@ -194,4 +199,10 @@ input {
     display: block;
     margin-right: 50px;
     box-shadow: 10px 10px 20px 10px rgba(112, 102, 102, 0.2);
+}
+
+#location {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 30px;
 }
