@@ -37,6 +37,11 @@ body {
     color: #ffffff;
 }
 
+hr {
+    border: solid rgb(227, 238, 252);
+    border-width: 0.5px;
+}
+
 #flaticon-credit {
     opacity: 0.5;
 }
