@@ -112,3 +112,20 @@ input {
 #extra-city-button:active {
     transform: translateY(2px);
 }
+
+#icon-card-1, #icon-card-2, #icon-card-3, #icon-card-4, #icon-card-5, #icon-card-6 {
+    text-align: center;
+}
+
+#weather-icon-1, #weather-icon-6 {
+    margin: 1rem;
+    width: 60%;
+    height: auto;
+}
+
+#weather-icon-2, #weather-icon-3, #weather-icon-4, #weather-icon-5 {
+    margin: 1rem;
+    margin-bottom: 10px;
+    width: 45%;
+    height: auto;
+}
