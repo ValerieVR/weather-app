@@ -42,6 +42,36 @@ hr {
     border-width: 0.5px;
 }
 
+.day-month {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.day-short {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#climate-1, #climate-2 {
+    font-size: 30px;
+}
+
+#temp-1, #temp-6 {
+    font-size: 25px;
+}
+
+.temp-unit-main {
+    font-size: 20px;
+}
+
+.temp-unit-sub {
+    font-size: 15px;
+}
+
 #flaticon-credit {
     opacity: 0.5;
 }
