@@ -34,7 +34,7 @@
             let weatherData = await response.json();
             console.log(weatherData);
         } catch (error) {
-            alert("Can't display weather, try again!")
+            alert("Can't display weather. Something went wrong.")
         }
     }
 
