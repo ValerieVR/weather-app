@@ -209,6 +209,7 @@ input {
     margin-top: 10px;
     margin-bottom: 20px;
     font-size: 30px;
+    text-transform: capitalize;
 }
 
 .minus-js {

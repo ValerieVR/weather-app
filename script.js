@@ -7,6 +7,7 @@
 
     let searchCity1 = document.getElementById("search-input-1");
     let searchCity1Bttn = document.getElementById("search-button-1");
+    let city1 = document.getElementById("city");
 
     let searchCity2 = document.getElementById("search-input-2");
     let searchCity2Bttn = document.getElementById("search-button-2");
@@ -106,13 +107,9 @@
         }
     }
 
-    
-
- 
-
-   
-
-    
+    let displayCity = () => {
+        city1.innerHTML = searchCity1.value;
+    }
 
     extraCityBttn.addEventListener("click", () => {
         changePlusMinus();
@@ -122,6 +119,7 @@
     searchCity1Bttn.addEventListener("click", (e) => {
         e.preventDefault();
         getWeatherCity1(searchCity1.value);
+        displayCity();
     })
 
     searchCity2Bttn.addEventListener("click", (e) => {
