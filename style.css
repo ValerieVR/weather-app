@@ -175,6 +175,7 @@ input {
 
 .main-weather {
     margin-top: 5px;
+    text-transform: capitalize;
 }
 
 #card-1, #card-6 {
