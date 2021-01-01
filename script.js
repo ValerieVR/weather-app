@@ -103,9 +103,62 @@
 
         } catch (error) {
             console.log(error);
-            alert("Can't display weather, try again!")
+            alert("Can't display weather, try again!");
         }
     }
+
+    let getWeatherCity2 = async (city2) => {
+        try {
+            let response = await fetch("https://api.weatherbit.io/v2.0/current?city="+city2+"&key=85f3c391448f45a4a7c0387acc9baedf");
+            let weatherData = await response.json();
+            
+            let date_str = weatherData.data[0].datetime;
+            let date_arr = date_str.split(":");
+            let date = new Date(date_arr[0]);
+
+            let day_long = longDays[date.getDay()];
+            let day6 = document.getElementById("day-6");
+            day6.innerHTML = day_long;
+
+            let month_short = shortMonths[date.getMonth()];
+            let month = document.getElementById("month-short-2");
+            month.innerHTML = month_short;
+
+            let dayNum = date.getDate();
+            let dayDate = document.getElementById("date-day-2");
+            dayDate.innerHTML = dayNum;
+
+            let climate = weatherData.data[0].weather.description;
+            let clim = document.getElementById("climate-2");
+            clim.innerHTML = climate;
+
+            let temperature = Math.round(weatherData.data[0].temp);
+            let temp = document.getElementById("temp-6");
+            temp.innerHTML = temperature;
+
+            let code = weatherData.data[0].weather.code;
+            let image = document.getElementById("weather-icon-6");
+            if (code >= 200 && code < 300) {
+                image.src = "./images/thunderstorm.svg";
+            } else if (code >= 300 && code < 500) {
+                image.src = "./images/drizzle.svg";
+            } else if (code >= 500 && code < 600) {
+                image.src = "./images/rain.svg";
+            } else if (code >= 600 && code < 700) {
+                image.src = "./images/snow.svg";
+            } else if (code >= 700 && code < 800) {
+                image.src = "./images/foggy.svg";
+            } else if (code == 800) {
+                image.src = "./images/sun.svg";
+            } else {
+                image.src = "./images/clouds.svg";
+            }
+        } catch (error) {
+            alert("Can't display weather, try again!");
+        }
+    }
+
+
 
     let displayCity = () => {
         city1.innerHTML = searchCity1.value;
@@ -124,6 +177,7 @@
 
     searchCity2Bttn.addEventListener("click", (e) => {
         e.preventDefault();
+        getWeatherCity2(searchCity2.value);
     });
 
 
