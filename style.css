@@ -130,6 +130,7 @@ input {
     border: 2px solid #134b70;
     display: inline-block;
     transition: all 0.4 ease 0s;
+    outline: none;
 }
 
 #search-button-1:hover, #search-button-2:hover {

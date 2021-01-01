@@ -12,9 +12,6 @@
     let searchCity2 = document.getElementById("search-input-2");
     let searchCity2Bttn = document.getElementById("search-button-2");
 
-    
-
-
     let longDays = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
     let shortDays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
     let shortMonths = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
@@ -115,6 +112,7 @@
             let date_str = weatherData.data[0].datetime;
             let date_arr = date_str.split(":");
             let date = new Date(date_arr[0]);
+            console.log(date_arr[1]);
 
             let day_long = longDays[date.getDay()];
             let day6 = document.getElementById("day-6");
@@ -132,7 +130,7 @@
             let clim = document.getElementById("climate-2");
             clim.innerHTML = climate;
 
-            let temperature = Math.round(weatherData.data[0].temp);
+            let temperature = weatherData.data[0].app_temp;
             let temp = document.getElementById("temp-6");
             temp.innerHTML = temperature;
 
@@ -149,7 +147,12 @@
             } else if (code >= 700 && code < 800) {
                 image.src = "./images/foggy.svg";
             } else if (code == 800) {
-                image.src = "./images/sun.svg";
+                let time = date_arr[1];
+                if (time > 5) {
+                    image.src = "./images/sun.svg";
+                } else {
+                    image.src = "./images/moon.svg";
+                }
             } else {
                 image.src = "./images/clouds.svg";
             }
