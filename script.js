@@ -108,10 +108,63 @@
 
     let getWeatherCity2 = async (city2) => {
         try {
-            let response = await fetch("https://api.openweathermap.org/data/2.5/weather?q="+city2+"&units=metric&appid=2ef359fbac037127dbef3b700cdb7730");
-            let weatherData = await response.json();
+            let response_1 = await fetch("https://api.openweathermap.org/data/2.5/weather?q="+city2+"&units=metric&appid=2ef359fbac037127dbef3b700cdb7730");
+            let weatherData = await response_1.json();
+
+            let response_2 = await fetch("https://api.openweathermap.org/data/2.5/forecast?q="+city2+"&units=metric&appid=2ef359fbac037127dbef3b700cdb7730");
+            let dateData = await response_2.json();
+
+            let date_hour = dateData.list[0].dt_txt;
+            let date_hour_arr = date_hour.split(" ");
+            let date = new Date(date_hour_arr[0]);
+
+
+            let day_long = longDays[date.getDay()];
+            let day6 = document.getElementById("day-6");
+            day6.innerHTML = day_long;
+
+            let month_short = shortMonths[date.getMonth()];
+            let shortMonth = document.getElementById("month-short-2");
+            shortMonth.innerHTML = month_short;
+
+            let dateNum = date.getDate();
+            let dateDay = document.getElementById("date-day-2");
+            dateDay.innerHTML = dateNum;
+
+            let climate = weatherData.weather[0].description;
+            let clim = document.getElementById("climate-2");
+            clim.innerHTML = climate;
+
+            let temperature = Math.round(weatherData.main.temp);
+            let temp = document.getElementById("temp-6");
+            temp.innerHTML = temperature;
+
+            let image = document.getElementById("weather-icon-6");
+            let code = weatherData.weather[0].id;
+            let hour = new Date(date_hour);
             
-           console.log(weatherData);
+            if (code >= 200 && code < 300) {
+                image.src = "./images/thunderstorm.svg";
+            } else if (code >= 300 && code < 500) {
+                image.src = "./images/drizzle.svg"
+            } else if (code >= 500 && code < 600) {
+                image.src = "./images/rain.svg"
+            } else if (code >= 600 && code <= 700) {
+                image.src = "./images/snow.svg"
+            } else if (code > 700 && code < 800) {
+                image.src = "./images/foggy.svg"
+            } else if (code == 800) {
+                let time = hour.getHours();
+                if (time > 5) {
+                    image.src = "./images/sun.svg";
+                } else {
+                    image.src = "./images/moon.svg";
+                }
+            } else {
+                image.src = "./images/clouds.svg";
+            }
+
+
             
         } catch (error) {
             alert("Can't display weather, try again!");
