@@ -142,7 +142,7 @@
             let image = document.getElementById("weather-icon-6");
             let code = weatherData.weather[0].id;
             let hour = new Date(date_hour);
-            
+
             if (code >= 200 && code < 300) {
                 image.src = "./images/thunderstorm.svg";
             } else if (code >= 300 && code < 500) {
@@ -163,8 +163,6 @@
             } else {
                 image.src = "./images/clouds.svg";
             }
-
-
             
         } catch (error) {
             alert("Can't display weather, try again!");
