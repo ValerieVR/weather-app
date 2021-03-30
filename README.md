@@ -7,7 +7,7 @@ The user enters a city of his/her choice and the weather for the next 5 days wil
 The goal of this project was to learn AJAX and work with an API.
 
 ## :eyes: Have a look 
-https://valerievr.github.io/weather-app/
+![](images/weather.gif)
 
 ## :wrench: Tools
 - Visual Studio Code
@@ -18,6 +18,4 @@ https://valerievr.github.io/weather-app/
 - Flaticon
 
 ## :pray: Thanks to
-God
-
 [BeCode](https://github.com/becodeorg)
